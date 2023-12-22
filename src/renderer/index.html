@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="enUK">
+<head>
+  <meta charset="UTF-8" />
+  <title>Electron Canvas</title>
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'"
+  />
+
+  <link href="./assets/styles.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+<div class="container">
+  <h1>Hello World!</h1>
+  <canvas id="canvas" width="400" height="400" style="border: 1px solid #000"></canvas>
+  <button id="addRectangleBtn">Add Rectangle</button>
+</div>
+<script type="module" src="./src/renderer.ts"></script>
+<script type="module" src="src/CanvasView.ts"></script>
+</body>
+</html>

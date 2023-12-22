@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5e57fde4-ff11-4693-800c-655d23789c9a" name="Changes" comment="feature: added initial canvas with flexible rectangles">
+      <change afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.npmrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.prettierignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.prettierrc.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vscode/extensions.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/entitlements.mac.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/icon.icns" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/icon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/electron-builder.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/electron.vite.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/preload/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/preload/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/src/CanvasView.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/src/renderer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/src/types/Rectangle.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.node.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.web.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Zla9lFjz68cuD5IinFrxVnp6x0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/lenov/WebstormProjects/class_diagram_constructor",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\lenov\\WebstormProjects\\class_diagram_constructor\\node_modules\\prettier",
+    "ts.external.directory.path": "C:\\Users\\lenov\\WebstormProjects\\class_diagram_constructor\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.rcb.reactComponents" value="false" />
+        <entry key="com.haulmont.rcb.reactInspector" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lenov\WebstormProjects\class_diagram_constructor\src\renderer\src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="$PROJECT_DIR$/../../../../Program Files/nodejs/node" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e57fde4-ff11-4693-800c-655d23789c9a" name="Changes" comment="" />
+      <created>1702998970994</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702998970994</updated>
+      <workItem from="1702998972161" duration="1675000" />
+      <workItem from="1703001326865" duration="2381000" />
+      <workItem from="1703252300400" duration="14000" />
+      <workItem from="1703254087307" duration="10120000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feature: added initial canvas with flexible rectangles" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: added initial canvas with flexible rectangles" />
+  </component>
+</project>
