@@ -14,8 +14,13 @@
 <body>
 <div class="container">
   <h1>Hello World!</h1>
-  <canvas id="canvas" width="400" height="400" style="border: 1px solid #000"></canvas>
-  <button id="addRectangleBtn">Add Rectangle</button>
+  <input type="file" accept=".ts" id="file-input" />
+  <button id="analyze-button">Analyze</button>
+  <pre id="result-container"></pre>
+  <div class="canvas-wrapper">
+    <canvas id="canvas" style="border: 1px solid #000"></canvas>
+  </div>
+  <button id="addRectangleBtn">Add ClassInfo</button>
 </div>
 <script type="module" src="./src/renderer.ts"></script>
 <script type="module" src="src/CanvasView.ts"></script>

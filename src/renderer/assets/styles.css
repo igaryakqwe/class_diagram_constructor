@@ -58,7 +58,6 @@ a:hover {
   display: flex;
   flex-direction: column;
   max-width: 840px;
-  margin: 0 auto;
   padding: 15px 30px 0 30px;
 }
 
@@ -203,3 +202,5 @@ a:hover {
     width: 100%;
   }
 }
+
+.canvas-wrapper, canvas {}

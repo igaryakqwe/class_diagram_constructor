@@ -5,40 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e57fde4-ff11-4693-800c-655d23789c9a" name="Changes" comment="feature: added initial canvas with flexible rectangles">
-      <change afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.eslintignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.npmrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.prettierignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.prettierrc.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vscode/extensions.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/entitlements.mac.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/icon.icns" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/icon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/electron-builder.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/electron.vite.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/preload/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/preload/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/icons.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/src/CanvasView.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/src/renderer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/src/types/Rectangle.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.node.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.web.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/private.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/protected.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/public.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/src/Editor.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/src/FileReader.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/src/TypeScriptAnalyzer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/src/types/ClassBlock.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/assets/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/assets/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/src/CanvasView.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/CanvasView.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/src/renderer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/renderer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/src/types/Rectangle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/types/ClassInfo.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,24 +42,24 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/lenov/WebstormProjects/class_diagram_constructor",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\lenov\\WebstormProjects\\class_diagram_constructor\\node_modules\\prettier",
-    "ts.external.directory.path": "C:\\Users\\lenov\\WebstormProjects\\class_diagram_constructor\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lenov/WebstormProjects/class_diagram_constructor&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\lenov\\WebstormProjects\\class_diagram_constructor\\node_modules\\prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\lenov\\WebstormProjects\\class_diagram_constructor\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -88,6 +70,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lenov\WebstormProjects\class_diagram_constructor\src\renderer\assets" />
       <recent name="C:\Users\lenov\WebstormProjects\class_diagram_constructor\src\renderer\src" />
     </key>
   </component>

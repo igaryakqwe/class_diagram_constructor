@@ -1,4 +1,5 @@
 import { CanvasView } from './CanvasView';
+import { FileManager } from "./FileReader";
 
 export function init(): void {
   window.addEventListener('DOMContentLoaded', () => {
@@ -23,7 +24,15 @@ function replaceText(selector: string, text: string): void {
 
 document.addEventListener('DOMContentLoaded', () => {
   const canvas = document.getElementById('canvas') as HTMLCanvasElement;
-  new CanvasView(canvas);
+  const fileInput = document.getElementById('file-input') as HTMLInputElement;
+  const analyzeButton = document.getElementById('analyze-button') as HTMLButtonElement;
+  const resultContainer = document.getElementById('result-container') as HTMLDivElement;
+  const canvasView = new CanvasView(canvas);
+  const fileManager = new FileManager(canvasView.editor);
+
+  analyzeButton.addEventListener('click', () => fileManager.renderClassInfo(fileInput, resultContainer));
+
+
 });
 
 init()
