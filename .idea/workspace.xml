@@ -4,23 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e57fde4-ff11-4693-800c-655d23789c9a" name="Changes" comment="feature: added initial canvas with flexible rectangles">
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/private.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/protected.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/public.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/src/Editor.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/src/FileReader.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/src/TypeScriptAnalyzer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/src/types/ClassBlock.ts" afterDir="false" />
+    <list default="true" id="5e57fde4-ff11-4693-800c-655d23789c9a" name="Changes" comment="added ui for class blocks">
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/default.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/method.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/private.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/protected.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/public.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/readonly.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/assets/typescript.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/src/ClassDrawer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/assets/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/assets/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/src/CanvasView.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/CanvasView.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/src/renderer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/renderer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/src/types/Rectangle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/types/ClassInfo.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/assets/private.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/assets/private.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/assets/protected.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/assets/protected.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/assets/public.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/assets/public.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/src/Editor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/Editor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/src/FileReader.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/FileReader.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/src/TypeScriptAnalyzer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/TypeScriptAnalyzer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/src/types/ClassInfo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/types/ClassInfo.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +38,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Zla9lFjz68cuD5IinFrxVnp6x0" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
@@ -47,15 +49,16 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/lenov/WebstormProjects/class_diagram_constructor&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lenov/WebstormProjects/class_diagram_constructor/src/renderer/assets&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\lenov\\WebstormProjects\\class_diagram_constructor\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\lenov\\WebstormProjects\\class_diagram_constructor\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -69,6 +72,9 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lenov\WebstormProjects\class_diagram_constructor\src\renderer\assets" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\lenov\WebstormProjects\class_diagram_constructor\src\renderer\assets" />
       <recent name="C:\Users\lenov\WebstormProjects\class_diagram_constructor\src\renderer\src" />
@@ -103,7 +109,18 @@
       <workItem from="1703001326865" duration="2381000" />
       <workItem from="1703252300400" duration="14000" />
       <workItem from="1703254087307" duration="10120000" />
+      <workItem from="1703580189269" duration="7611000" />
+      <workItem from="1703618607940" duration="2516000" />
+      <workItem from="1703799278142" duration="3606000" />
     </task>
+    <task id="LOCAL-00001" summary="added possibility to read class info from file">
+      <created>1703543638078</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1703543638078</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +128,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feature: added initial canvas with flexible rectangles" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: added initial canvas with flexible rectangles" />
+    <MESSAGE value="added possibility to read class info from file" />
+    <MESSAGE value="added ui for class blocks" />
+    <option name="LAST_COMMIT_MESSAGE" value="added ui for class blocks" />
   </component>
 </project>
