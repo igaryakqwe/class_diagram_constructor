@@ -5,22 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e57fde4-ff11-4693-800c-655d23789c9a" name="Changes" comment="added ui for class blocks">
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/default.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/method.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/private.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/protected.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/public.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/readonly.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/assets/typescript.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/src/ClassDrawer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/assets/private.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/assets/private.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/assets/protected.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/assets/protected.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/assets/public.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/assets/public.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/src/CanvasView.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/CanvasView.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/src/ClassDrawer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/ClassDrawer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/src/Editor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/Editor.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/src/FileReader.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/FileReader.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/src/TypeScriptAnalyzer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/TypeScriptAnalyzer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/src/types/ClassInfo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/types/ClassInfo.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +101,7 @@
       <workItem from="1703254087307" duration="10120000" />
       <workItem from="1703580189269" duration="7611000" />
       <workItem from="1703618607940" duration="2516000" />
-      <workItem from="1703799278142" duration="3606000" />
+      <workItem from="1703799278142" duration="5687000" />
     </task>
     <task id="LOCAL-00001" summary="added possibility to read class info from file">
       <created>1703543638078</created>
@@ -120,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703543638078</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added ui for class blocks">
+      <created>1703802944789</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1703802944789</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

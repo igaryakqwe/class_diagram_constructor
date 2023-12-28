@@ -1,51 +1,57 @@
-import { Editor } from "./Editor";
+import { Editor } from './Editor'
 
 export class CanvasView {
-  private readonly canvas: HTMLCanvasElement;
-  private readonly ctx: CanvasRenderingContext2D;
-  private ratio = window.devicePixelRatio || 1; // Ensure a default value if devicePixelRatio is undefined
-  readonly editor: Editor;
+  private readonly canvas: HTMLCanvasElement
+  private readonly ctx: CanvasRenderingContext2D
+  private ratio = window.devicePixelRatio || 1 // Ensure a default value if devicePixelRatio is undefined
+  readonly editor: Editor
 
   constructor(canvas: HTMLCanvasElement) {
-    this.canvas = canvas;
-    this.ctx = canvas.getContext('2d')!;
-    this.setupButton();
-    this.setupEventListeners();
-    this.setCanvasSize();
-    this.editor = new Editor(this.canvas, this.ctx);
+    this.canvas = canvas
+    this.ctx = canvas.getContext('2d')!
+    this.setupButton()
+    this.setupEventListeners()
+    this.setCanvasSize()
+    this.editor = new Editor(this.canvas, this.ctx)
   }
 
-  private setCanvasSize() {
-    const { canvas, ctx, ratio } = this;
+  private setCanvasSize(): void {
+    const { canvas, ctx, ratio } = this
 
-    const canvasWidth = 1120;
-    const canvasHeight = 620;
+    const canvasWidth = 1120
+    const canvasHeight = 620
 
-    canvas.width = canvasWidth * ratio;
-    canvas.height = canvasHeight * ratio;
+    canvas.width = canvasWidth * ratio
+    canvas.height = canvasHeight * ratio
 
-    canvas.style.width = canvasWidth + 'px';
-    canvas.style.height = canvasHeight + 'px';
+    canvas.style.width = canvasWidth + 'px'
+    canvas.style.height = canvasHeight + 'px'
 
-    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+    ctx.setTransform(ratio, 0, 0, ratio, 0, 0)
   }
 
-  private setupButton() {
-    const addRectangleBtn = document.getElementById('addRectangleBtn');
+  private setupButton(): void {
+    const addRectangleBtn = document.getElementById('addRectangleBtn')
     if (addRectangleBtn) {
-      addRectangleBtn.addEventListener('click', () => this.editor.addClass({
-        name: 'Test',
-        properties: [],
-        methods: [],
-      }));
+      addRectangleBtn.addEventListener('click', () =>
+        this.editor.addClass({
+          name: 'Test',
+          properties: [],
+          methods: []
+        })
+      )
     }
 
-    document.addEventListener('keydown', (event) => this.editor.handleKeyDown(event));
+    document.addEventListener('keydown', (event) => this.editor.handleKeyDown(event))
   }
 
-  private setupEventListeners() {
-    this.canvas.addEventListener('mousedown', (event) => this.editor.handleMouseDown(event));
-    this.canvas.addEventListener('mousemove', (event) => this.editor.handleMouseMove(event));
-    this.canvas.addEventListener('mouseup', () => this.editor.handleMouseUp());
+  private setupEventListeners(): void {
+    this.canvas.addEventListener('mousedown', (event) => this.editor.handleMouseDown(event))
+    this.canvas.addEventListener('mousemove', (event) => this.editor.handleMouseMove(event))
+    this.canvas.addEventListener('mouseup', () => this.editor.handleMouseUp())
+
+    this.canvas.addEventListener('mousedown', (event) => this.editor.handleResizeMouseDown(event))
+    this.canvas.addEventListener('mousemove', (event) => this.editor.handleResizeMouseMove(event))
+    this.canvas.addEventListener('mouseup', () => this.editor.handleResizeMouseUp())
   }
 }

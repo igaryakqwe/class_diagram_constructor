@@ -83,6 +83,7 @@ export class ClassDrawer {
   }
 
   drawMethods(lineHeight): void {
+    console.log(this.classBlock.classInfo)
     this.ctx.fillStyle = '#6f42c1'
 
     for (const method in this.classBlock.classInfo.methods) {
@@ -116,6 +117,11 @@ export class ClassDrawer {
       private: '../assets/private.svg',
       protected: '../assets/protected.svg'
     }
+
+    if (!accessModifier) {
+      return '../assets/public.svg'
+    }
+
     return iconsMapper[accessModifier]
   }
 

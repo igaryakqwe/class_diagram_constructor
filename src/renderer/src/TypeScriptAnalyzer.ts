@@ -5,7 +5,7 @@ export class TypeScriptAnalyzer {
   private readonly project = new ts.Project({ useInMemoryFileSystem: true })
 
   analyzeFile(fileContent: string): ClassInfo {
-    const sourceFile = this.project.createSourceFile('temp.ts', fileContent)
+    const sourceFile = this.project.createSourceFile(`temp${new Date()}.ts`, fileContent)
 
     const classDeclaration = sourceFile.getClasses()[0]
 
