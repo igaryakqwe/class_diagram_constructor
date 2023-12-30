@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e57fde4-ff11-4693-800c-655d23789c9a" name="Changes" comment="replaced classBlock methods to ClassDrawer">
+    <list default="true" id="5e57fde4-ff11-4693-800c-655d23789c9a" name="Changes" comment="replaced arrow methods to ArrowDrawer">
+      <change afterPath="$PROJECT_DIR$/src/renderer/src/types/Arrow.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/src/types/ResizeHandle.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/src/ArrowDrawer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/ArrowDrawer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/src/Editor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/Editor.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +100,7 @@
       <workItem from="1703580189269" duration="7611000" />
       <workItem from="1703618607940" duration="2516000" />
       <workItem from="1703799278142" duration="6039000" />
-      <workItem from="1703833551250" duration="7720000" />
+      <workItem from="1703833551250" duration="7979000" />
     </task>
     <task id="LOCAL-00001" summary="added possibility to read class info from file">
       <created>1703543638078</created>
@@ -136,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703934270561</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="replaced arrow methods to ArrowDrawer">
+      <created>1703934771262</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1703934771262</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +157,7 @@
     <MESSAGE value="added possibility to change sizes of blocks" />
     <MESSAGE value="added arrows and possibility to edit them" />
     <MESSAGE value="replaced classBlock methods to ClassDrawer" />
-    <option name="LAST_COMMIT_MESSAGE" value="replaced classBlock methods to ClassDrawer" />
+    <MESSAGE value="replaced arrow methods to ArrowDrawer" />
+    <option name="LAST_COMMIT_MESSAGE" value="replaced arrow methods to ArrowDrawer" />
   </component>
 </project>

@@ -2,12 +2,12 @@ import { ClassInfo } from './types/ClassInfo'
 import { ClassBlock } from './types/ClassBlock'
 import { ClassDrawer } from './ClassDrawer'
 import { ArrowDrawer } from './ArrowDrawer'
-
-type ResizeHandle = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
+import { ResizeHandle } from './types/ResizeHandle'
+import { Arrow } from './types/Arrow'
 
 export class Editor {
   private classBlocks: ClassBlock[] = []
-  private arrows: { startX: number; startY: number; endX: number; endY: number }[] = []
+  private arrows: Arrow[] = []
   private isDragging: boolean = false
   private selectedRectangleIndex: number | null = null
   private cornerSize: number = 8
