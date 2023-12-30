@@ -1,5 +1,8 @@
 export class ArrowDrawer {
-  constructor(private ctx: CanvasRenderingContext2D) {}
+  constructor(
+    private ctx: CanvasRenderingContext2D,
+    private editCircleRadius
+  ) {}
 
   drawArrow(startX: number, startY: number, endX: number, endY: number): void {
     this.ctx.beginPath()
@@ -21,5 +24,16 @@ export class ArrowDrawer {
     )
     this.ctx.closePath()
     this.ctx.fill()
+
+    this.drawEditCircle(startX, startY)
+    this.drawEditCircle(endX, endY)
+  }
+
+  private drawEditCircle(x: number, y: number): void {
+    this.ctx.beginPath()
+    this.ctx.arc(x, y, this.editCircleRadius, 0, 2 * Math.PI)
+    this.ctx.fillStyle = 'blue'
+    this.ctx.fill()
+    this.ctx.stroke()
   }
 }

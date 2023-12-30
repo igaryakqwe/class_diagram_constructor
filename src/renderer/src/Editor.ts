@@ -119,42 +119,14 @@ export class Editor {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
 
     this.arrows.forEach((arrow) => {
-      const arrowDrawer = new ArrowDrawer(this.ctx)
+      const arrowDrawer = new ArrowDrawer(this.ctx, this.editCircleRadius)
       arrowDrawer.drawArrow(arrow.startX, arrow.startY, arrow.endX, arrow.endY)
-      this.drawEditCircle(arrow.startX, arrow.startY)
-      this.drawEditCircle(arrow.endX, arrow.endY)
     })
 
     this.classBlocks.forEach((classBlock, index) => {
       const classDrawer = new ClassDrawer(this.ctx, classBlock, this.cornerSize)
       classDrawer.drawClassBLock(classBlock, index, this.selectedRectangleIndex)
     })
-  }
-
-  private drawEditCircle(x: number, y: number): void {
-    this.ctx.beginPath()
-    this.ctx.arc(x, y, this.editCircleRadius, 0, 2 * Math.PI)
-    this.ctx.fillStyle = 'blue'
-    this.ctx.fill()
-    this.ctx.stroke()
-  }
-
-  private handleResizeStart(
-    mouseX: number,
-    mouseY: number,
-    arrow: { startX: number; startY: number; endX: number; endY: number }
-  ): void {
-    arrow.startX = mouseX
-    arrow.startY = mouseY
-  }
-
-  private handleResizeEnd(
-    mouseX: number,
-    mouseY: number,
-    arrow: { startX: number; startY: number; endX: number; endY: number }
-  ): void {
-    arrow.endX = mouseX
-    arrow.endY = mouseY
   }
 
   private handleResize(mouseX: number, mouseY: number, block: ClassBlock): void {
@@ -187,6 +159,24 @@ export class Editor {
     if (this.resizingHandle && handleMap[this.resizingHandle]) {
       handleMap[this.resizingHandle](block, mouseX, mouseY)
     }
+  }
+
+  private handleResizeStart(
+    mouseX: number,
+    mouseY: number,
+    arrow: { startX: number; startY: number; endX: number; endY: number }
+  ): void {
+    arrow.startX = mouseX
+    arrow.startY = mouseY
+  }
+
+  private handleResizeEnd(
+    mouseX: number,
+    mouseY: number,
+    arrow: { startX: number; startY: number; endX: number; endY: number }
+  ): void {
+    arrow.endX = mouseX
+    arrow.endY = mouseY
   }
 
   private getResizingHandle(
