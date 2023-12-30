@@ -1,18 +1,21 @@
 import { ClassInfo } from './types/ClassInfo'
 import { ClassBlock } from './types/ClassBlock'
 import { ClassDrawer } from './ClassDrawer'
+import { ArrowDrawer } from './ArrowDrawer'
 
 type ResizeHandle = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
 
 export class Editor {
   private classBlocks: ClassBlock[] = []
+  private arrows: { startX: number; startY: number; endX: number; endY: number }[] = []
   private isDragging: boolean = false
   private selectedRectangleIndex: number | null = null
   private offsetX: number = 0
   private offsetY: number = 0
   private resizing: boolean = false
-  private resizingHandle: ResizeHandle | null = null
+  private resizingHandle: string | null = null
   private cornerSize: number = 8
+  private editCircleRadius: number = 5
 
   constructor(
     private canvas: HTMLCanvasElement,
@@ -22,6 +25,20 @@ export class Editor {
   handleMouseDown(event: MouseEvent): void {
     const mouseX = event.clientX - this.canvas.getBoundingClientRect().left
     const mouseY = event.clientY - this.canvas.getBoundingClientRect().top
+
+    for (const arrow of this.arrows) {
+      if (this.isInEditCircle(mouseX, mouseY, arrow.startX, arrow.startY)) {
+        this.resizing = true
+        this.selectedRectangleIndex = this.arrows.indexOf(arrow)
+        this.resizingHandle = 'start'
+        return
+      } else if (this.isInEditCircle(mouseX, mouseY, arrow.endX, arrow.endY)) {
+        this.resizing = true
+        this.selectedRectangleIndex = this.arrows.indexOf(arrow)
+        this.resizingHandle = 'end'
+        return
+      }
+    }
 
     this.classBlocks.forEach((rectangle, index) => {
       if (
@@ -39,6 +56,11 @@ export class Editor {
     })
   }
 
+  isInEditCircle(mouseX: number, mouseY: number, circleX: number, circleY: number): boolean {
+    const distance = Math.sqrt((mouseX - circleX) ** 2 + (mouseY - circleY) ** 2)
+    return distance <= this.editCircleRadius
+  }
+
   handleMouseMove(event: MouseEvent): void {
     if (this.isDragging && this.selectedRectangleIndex !== null) {
       const mouseX = event.clientX - this.canvas.getBoundingClientRect().left
@@ -54,9 +76,13 @@ export class Editor {
     if (this.resizing && this.selectedRectangleIndex !== null && this.resizingHandle) {
       const mouseX = event.clientX - this.canvas.getBoundingClientRect().left
       const mouseY = event.clientY - this.canvas.getBoundingClientRect().top
-      const block = this.classBlocks[this.selectedRectangleIndex]
 
-      this.handleResize(mouseX, mouseY, block)
+      if (this.resizingHandle === 'start') {
+        this.handleResizeStart(mouseX, mouseY, this.arrows[this.selectedRectangleIndex])
+      } else if (this.resizingHandle === 'end') {
+        this.handleResizeEnd(mouseX, mouseY, this.arrows[this.selectedRectangleIndex])
+      }
+
       this.draw()
     }
   }
@@ -81,8 +107,23 @@ export class Editor {
     this.draw()
   }
 
+  addArrow(): void {
+    const startX: number = this.canvas.width / 2
+    const startY: number = this.canvas.height / 2
+
+    this.arrows.push({ startX, startY, endX: startX + 80, endY: startY })
+    this.draw()
+  }
+
   draw(): void {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
+
+    this.arrows.forEach((arrow) => {
+      const arrowDrawer = new ArrowDrawer(this.ctx)
+      arrowDrawer.drawArrow(arrow.startX, arrow.startY, arrow.endX, arrow.endY)
+      this.drawEditCircle(arrow.startX, arrow.startY)
+      this.drawEditCircle(arrow.endX, arrow.endY)
+    })
 
     this.classBlocks.forEach((classBlock, index) => {
       const classDrawer = new ClassDrawer(this.ctx, classBlock)
@@ -122,6 +163,32 @@ export class Editor {
     const halfCornerSize = this.cornerSize / 2
     this.ctx.fillStyle = color
     this.ctx.fillRect(x - halfCornerSize, y - halfCornerSize, this.cornerSize, this.cornerSize)
+  }
+
+  private drawEditCircle(x: number, y: number): void {
+    this.ctx.beginPath()
+    this.ctx.arc(x, y, this.editCircleRadius, 0, 2 * Math.PI)
+    this.ctx.fillStyle = 'blue'
+    this.ctx.fill()
+    this.ctx.stroke()
+  }
+
+  private handleResizeStart(
+    mouseX: number,
+    mouseY: number,
+    arrow: { startX: number; startY: number; endX: number; endY: number }
+  ): void {
+    arrow.startX = mouseX
+    arrow.startY = mouseY
+  }
+
+  private handleResizeEnd(
+    mouseX: number,
+    mouseY: number,
+    arrow: { startX: number; startY: number; endX: number; endY: number }
+  ): void {
+    arrow.endX = mouseX
+    arrow.endY = mouseY
   }
 
   private handleResize(mouseX: number, mouseY: number, block: ClassBlock): void {

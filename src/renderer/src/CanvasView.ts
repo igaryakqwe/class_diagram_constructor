@@ -32,6 +32,7 @@ export class CanvasView {
 
   private setupButton(): void {
     const addRectangleBtn = document.getElementById('addRectangleBtn')
+    const addArrowBtn = document.getElementById('addArrowBtn')
     if (addRectangleBtn) {
       addRectangleBtn.addEventListener('click', () =>
         this.editor.addClass({
@@ -40,6 +41,10 @@ export class CanvasView {
           methods: []
         })
       )
+    }
+
+    if (addArrowBtn) {
+      addArrowBtn.addEventListener('click', () => this.editor.addArrow())
     }
 
     document.addEventListener('keydown', (event) => this.editor.handleKeyDown(event))
