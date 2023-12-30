@@ -20,7 +20,7 @@ export class FileManager {
       try {
         const fileContent = event.target?.result as string
         const analysisResult = this.analyzer.analyzeFile(fileContent)
-        this.editor.addClass(analysisResult)
+        this.editor.addClassBlock(analysisResult)
       } catch (error) {
         resultContainer.innerHTML = `Error reading file: ${error?.message}`
       }

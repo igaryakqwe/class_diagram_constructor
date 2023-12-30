@@ -5,7 +5,8 @@ export class ClassDrawer {
   private totalHeight = 0
   constructor(
     private ctx: CanvasRenderingContext2D,
-    private classBlock: ClassBlock
+    private classBlock: ClassBlock,
+    private cornerSize: number
   ) {
     this.textY = this.classBlock.y + 20
   }
@@ -109,6 +110,48 @@ export class ClassDrawer {
       this.ctx.fillText(methodValue, textX, textY)
       this.totalHeight += lineHeight
     }
+  }
+
+  public drawClassBLock(
+    classBlock: ClassBlock,
+    index: number,
+    selectedRectangleIndex: number | null
+  ): void {
+    this.ctx.fillStyle = 'white'
+    this.ctx.strokeStyle = selectedRectangleIndex === index ? '#cce5ff' : 'black'
+    this.ctx.lineWidth = 1
+    this.ctx.fillRect(classBlock.x, classBlock.y, classBlock.width, classBlock.height)
+    this.ctx.strokeRect(
+      classBlock.x - 1,
+      classBlock.y - 1,
+      classBlock.width + 2,
+      classBlock.height + 2
+    )
+
+    if (selectedRectangleIndex === index) {
+      this.drawCornerSquare(classBlock.x, classBlock.y, this.ctx.strokeStyle)
+      this.drawCornerSquare(classBlock.x + classBlock.width, classBlock.y, this.ctx.strokeStyle)
+      this.drawCornerSquare(classBlock.x, classBlock.y + classBlock.height, this.ctx.strokeStyle)
+      this.drawCornerSquare(
+        classBlock.x + classBlock.width,
+        classBlock.y + classBlock.height,
+        this.ctx.strokeStyle
+      )
+    }
+
+    this.ctx.fillStyle = 'black'
+    this.ctx.font = '14px Arial'
+    const lineHeight = 20
+
+    this.drawClassName()
+    this.drawProperties(lineHeight)
+    this.drawMethods(lineHeight)
+  }
+
+  private drawCornerSquare(x: number, y: number, color: string): void {
+    const halfCornerSize = this.cornerSize / 2
+    this.ctx.fillStyle = color
+    this.ctx.fillRect(x - halfCornerSize, y - halfCornerSize, this.cornerSize, this.cornerSize)
   }
 
   private chooseAccessIcon(accessModifier: string): string {

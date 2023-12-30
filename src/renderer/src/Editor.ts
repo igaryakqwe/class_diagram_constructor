@@ -10,11 +10,11 @@ export class Editor {
   private arrows: { startX: number; startY: number; endX: number; endY: number }[] = []
   private isDragging: boolean = false
   private selectedRectangleIndex: number | null = null
+  private cornerSize: number = 8
   private offsetX: number = 0
   private offsetY: number = 0
   private resizing: boolean = false
   private resizingHandle: string | null = null
-  private cornerSize: number = 8
   private editCircleRadius: number = 5
 
   constructor(
@@ -56,11 +56,6 @@ export class Editor {
     })
   }
 
-  isInEditCircle(mouseX: number, mouseY: number, circleX: number, circleY: number): boolean {
-    const distance = Math.sqrt((mouseX - circleX) ** 2 + (mouseY - circleY) ** 2)
-    return distance <= this.editCircleRadius
-  }
-
   handleMouseMove(event: MouseEvent): void {
     if (this.isDragging && this.selectedRectangleIndex !== null) {
       const mouseX = event.clientX - this.canvas.getBoundingClientRect().left
@@ -94,7 +89,12 @@ export class Editor {
     this.resizingHandle = null
   }
 
-  addClass(classInfo: ClassInfo): void {
+  isInEditCircle(mouseX: number, mouseY: number, circleX: number, circleY: number): boolean {
+    const distance = Math.sqrt((mouseX - circleX) ** 2 + (mouseY - circleY) ** 2)
+    return distance <= this.editCircleRadius
+  }
+
+  addClassBlock(classInfo: ClassInfo): void {
     const classBlock: ClassBlock = {
       x: Math.random() * (this.canvas.width - 150),
       y: Math.random() * (this.canvas.height - 150),
@@ -126,43 +126,9 @@ export class Editor {
     })
 
     this.classBlocks.forEach((classBlock, index) => {
-      const classDrawer = new ClassDrawer(this.ctx, classBlock)
-      this.ctx.fillStyle = 'white'
-      this.ctx.strokeStyle = this.selectedRectangleIndex === index ? '#cce5ff' : 'black'
-      this.ctx.lineWidth = 1
-      this.ctx.fillRect(classBlock.x, classBlock.y, classBlock.width, classBlock.height)
-      this.ctx.strokeRect(
-        classBlock.x - 1,
-        classBlock.y - 1,
-        classBlock.width + 2,
-        classBlock.height + 2
-      )
-
-      if (this.selectedRectangleIndex === index) {
-        this.drawCornerSquare(classBlock.x, classBlock.y, this.ctx.strokeStyle) // top-left
-        this.drawCornerSquare(classBlock.x + classBlock.width, classBlock.y, this.ctx.strokeStyle) // top-right
-        this.drawCornerSquare(classBlock.x, classBlock.y + classBlock.height, this.ctx.strokeStyle) // bottom-left
-        this.drawCornerSquare(
-          classBlock.x + classBlock.width,
-          classBlock.y + classBlock.height,
-          this.ctx.strokeStyle
-        ) // bottom-right
-      }
-
-      this.ctx.fillStyle = 'black'
-      this.ctx.font = '14px Arial'
-      const lineHeight = 20
-
-      classDrawer.drawClassName()
-      classDrawer.drawProperties(lineHeight)
-      classDrawer.drawMethods(lineHeight)
+      const classDrawer = new ClassDrawer(this.ctx, classBlock, this.cornerSize)
+      classDrawer.drawClassBLock(classBlock, index, this.selectedRectangleIndex)
     })
-  }
-
-  private drawCornerSquare(x: number, y: number, color: string): void {
-    const halfCornerSize = this.cornerSize / 2
-    this.ctx.fillStyle = color
-    this.ctx.fillRect(x - halfCornerSize, y - halfCornerSize, this.cornerSize, this.cornerSize)
   }
 
   private drawEditCircle(x: number, y: number): void {

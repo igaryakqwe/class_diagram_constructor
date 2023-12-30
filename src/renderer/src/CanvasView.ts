@@ -35,7 +35,7 @@ export class CanvasView {
     const addArrowBtn = document.getElementById('addArrowBtn')
     if (addRectangleBtn) {
       addRectangleBtn.addEventListener('click', () =>
-        this.editor.addClass({
+        this.editor.addClassBlock({
           name: 'Test',
           properties: [],
           methods: []
