@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e57fde4-ff11-4693-800c-655d23789c9a" name="Changes" comment="added side panel">
+    <list default="true" id="5e57fde4-ff11-4693-800c-655d23789c9a" name="Changes" comment="added possibility to delete and add class attributes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/assets/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/assets/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/src/Editor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/Editor.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/src/SidePanel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/SidePanel.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -150,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1704020643472</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added possibility to delete and add class attributes">
+      <created>1704027065876</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1704027065876</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +174,7 @@
     <MESSAGE value="replaced classBlock methods to ClassDrawer" />
     <MESSAGE value="replaced arrow methods to ArrowDrawer" />
     <MESSAGE value="added side panel" />
-    <option name="LAST_COMMIT_MESSAGE" value="added side panel" />
+    <MESSAGE value="added possibility to delete and add class attributes" />
+    <option name="LAST_COMMIT_MESSAGE" value="added possibility to delete and add class attributes" />
   </component>
 </project>

@@ -57,14 +57,14 @@ export class SidePanel {
       this.curClassInfo.methods.splice(index, 1)
     }
 
-    this.draw()
+    this.drawAll()
     this.editor.draw()
   }
 
   private drawFieldForm(type: 'property' | 'method'): void {
     const form = document.getElementById('form') as HTMLFormElement
     form.innerHTML = `
-      <h3>${type === 'property' ? 'Property' : 'Method'}</h3>
+      <h3>Add ${type === 'property' ? 'Property' : 'Method'}</h3>
       <label for="accessModifier">Access Modifier:</label>
       <select id="accessModifier">
         <option value="public">public</option>
@@ -87,16 +87,39 @@ export class SidePanel {
     submitFormBtn.addEventListener('click', () => this.submitForm(type, form))
   }
 
+  private drawEditNameForm(): void {
+    const editNameInput = document.createElement('input')
+    editNameInput.id = 'editNameInput'
+    editNameInput.type = 'text'
+    editNameInput.value = this.curClassInfo.name
+
+    const saveButton = document.createElement('button')
+    saveButton.id = 'save'
+    saveButton.innerText = 'Save'
+
+    saveButton.addEventListener('click', () => {
+      this.curClassInfo.name = editNameInput.value
+      this.drawAll()
+      this.editor.draw()
+    })
+
+    const className = document.getElementById('className') as HTMLHeadingElement
+    className.innerHTML = 'Class name: '
+    className.appendChild(editNameInput)
+    className.appendChild(saveButton)
+  }
+
   public drawClassName(): void {
-    const className = document.getElementById('className')
-    if (className) {
-      className.innerText = `Class name: ${this.curClassInfo.name}`
-    }
+    const className = document.getElementById('className') as HTMLHeadingElement
+    className.innerHTML = `Class name: ${this.curClassInfo.name} <button id="editName">Edit</button>`
+
+    const editNameBtn = document.getElementById('editName') as HTMLButtonElement
+    editNameBtn.addEventListener('click', () => this.drawEditNameForm())
   }
 
   public drawProperties(): void {
     const properties = document.getElementById('propertiesList') as HTMLElement
-    const head = '<h3>Properties <button id="addProperty">Add</button></h3>'
+    const head = '<h3>Properties <button id="addProperty">+</button></h3>'
     const propertyElements = this.curClassInfo.properties.map((property, index) => {
       return this.getPropertyHtml(property, index)
     })
@@ -109,7 +132,7 @@ export class SidePanel {
 
   public drawMethods(): void {
     const methods = document.getElementById('methodsList') as HTMLElement
-    const head = '<h3>Methods <button id="addMethod">Add</button></h3>'
+    const head = '<h3>Methods <button id="addMethod">+</button></h3>'
     const methodElements = this.curClassInfo.methods.map((method, index) => {
       return this.getMethodHtml(method, index)
     })
@@ -120,7 +143,7 @@ export class SidePanel {
     this.addDeleteButtonListeners('method')
   }
 
-  public draw(): void {
+  public drawAll(): void {
     this.drawClassName()
     this.drawProperties()
     this.drawMethods()
@@ -148,7 +171,7 @@ export class SidePanel {
       this.curClassInfo.methods.push(newField)
     }
     form.innerText = ''
-    this.draw()
+    this.drawAll()
     this.editor.draw()
   }
 }

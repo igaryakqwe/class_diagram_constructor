@@ -49,7 +49,7 @@ export class Editor {
         mouseY <= rectangle.y + rectangle.height
       ) {
         const sidePanel = new SidePanel(this, index)
-        sidePanel.draw()
+        sidePanel.drawAll()
         this.isDragging = true
         this.selectedRectangleIndex = index
         this.offsetX = mouseX - rectangle.x
