@@ -3,7 +3,7 @@ import { Editor } from './Editor'
 export class CanvasView {
   private readonly canvas: HTMLCanvasElement
   private readonly ctx: CanvasRenderingContext2D
-  private ratio = window.devicePixelRatio || 1 // Ensure a default value if devicePixelRatio is undefined
+  private ratio = window.devicePixelRatio || 1
   readonly editor: Editor
 
   constructor(canvas: HTMLCanvasElement) {

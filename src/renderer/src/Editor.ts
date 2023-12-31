@@ -4,12 +4,13 @@ import { ClassDrawer } from './ClassDrawer'
 import { ArrowDrawer } from './ArrowDrawer'
 import { ResizeHandle } from './types/ResizeHandle'
 import { Arrow } from './types/Arrow'
+import { SidePanel } from './SidePanel'
 
 export class Editor {
-  private classBlocks: ClassBlock[] = []
+  public classBlocks: ClassBlock[] = []
   private arrows: Arrow[] = []
   private isDragging: boolean = false
-  private selectedRectangleIndex: number | null = null
+  public selectedRectangleIndex: number | null = null
   private cornerSize: number = 8
   private offsetX: number = 0
   private offsetY: number = 0
@@ -47,6 +48,8 @@ export class Editor {
         mouseY >= rectangle.y &&
         mouseY <= rectangle.y + rectangle.height
       ) {
+        const sidePanel = new SidePanel(this, index)
+        sidePanel.draw()
         this.isDragging = true
         this.selectedRectangleIndex = index
         this.offsetX = mouseX - rectangle.x
