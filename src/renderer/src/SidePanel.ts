@@ -40,39 +40,6 @@ export class SidePanel {
             </div>`
   }
 
-  public drawClassName(): void {
-    const className = document.getElementById('className')
-    if (className) {
-      className.innerText = `Class name: ${this.curClassInfo.name}`
-    }
-  }
-
-  public drawProperties(): void {
-    const properties = document.getElementById('propertiesList') as HTMLElement
-    const head = '<h3>Properties</h3>'
-    const propertyElements = this.curClassInfo.properties.map((property, index) => {
-      return this.getPropertyHtml(property, index)
-    })
-    properties.innerHTML = head + propertyElements.join('')
-    this.addDeleteButtonListeners('property')
-  }
-
-  public drawMethods(): void {
-    const methods = document.getElementById('methodsList') as HTMLElement
-    const head = '<h3>Methods</h3>'
-    const methodElements = this.curClassInfo.methods.map((method, index) => {
-      return this.getMethodHtml(method, index)
-    })
-    methods.innerHTML = head + methodElements.join('')
-    this.addDeleteButtonListeners('method')
-  }
-
-  public draw(): void {
-    this.drawClassName()
-    this.drawProperties()
-    this.drawMethods()
-  }
-
   private addDeleteButtonListeners(type: 'property' | 'method'): void {
     const buttons = document.querySelectorAll(`.delete-button[data-type="${type}"]`)
     buttons.forEach((button) => {
@@ -90,6 +57,97 @@ export class SidePanel {
       this.curClassInfo.methods.splice(index, 1)
     }
 
+    this.draw()
+    this.editor.draw()
+  }
+
+  private drawFieldForm(type: 'property' | 'method'): void {
+    const form = document.getElementById('form') as HTMLFormElement
+    form.innerHTML = `
+      <h3>${type === 'property' ? 'Property' : 'Method'}</h3>
+      <label for="accessModifier">Access Modifier:</label>
+      <select id="accessModifier">
+        <option value="public">public</option>
+        <option value="private">private</option>
+        <option value="protected">protected</option>
+      </select>
+      <label for="modifier">Modifier:</label>
+      <select id="modifier">
+        <option value="none">none</option>
+        <option value="readonly">readonly</option>
+      </select>
+      <label for="name">Name:</label>
+      <input type="text" id="name">
+      <label for="type">Type:</label>
+      <input type="text" id="type">
+      <button id="submitForm">Add ${type}</button>
+    `
+
+    const submitFormBtn = document.getElementById('submitForm') as HTMLButtonElement
+    submitFormBtn.addEventListener('click', () => this.submitForm(type, form))
+  }
+
+  public drawClassName(): void {
+    const className = document.getElementById('className')
+    if (className) {
+      className.innerText = `Class name: ${this.curClassInfo.name}`
+    }
+  }
+
+  public drawProperties(): void {
+    const properties = document.getElementById('propertiesList') as HTMLElement
+    const head = '<h3>Properties <button id="addProperty">Add</button></h3>'
+    const propertyElements = this.curClassInfo.properties.map((property, index) => {
+      return this.getPropertyHtml(property, index)
+    })
+    properties.innerHTML = head + propertyElements.join('')
+    const addPropertyBtn = document.getElementById('addProperty') as HTMLButtonElement
+    addPropertyBtn.addEventListener('click', () => this.addField('property'))
+
+    this.addDeleteButtonListeners('property')
+  }
+
+  public drawMethods(): void {
+    const methods = document.getElementById('methodsList') as HTMLElement
+    const head = '<h3>Methods <button id="addMethod">Add</button></h3>'
+    const methodElements = this.curClassInfo.methods.map((method, index) => {
+      return this.getMethodHtml(method, index)
+    })
+    methods.innerHTML = head + methodElements.join('')
+
+    const addMethodBtn = document.getElementById('addMethod') as HTMLButtonElement
+    addMethodBtn.addEventListener('click', () => this.addField('method'))
+    this.addDeleteButtonListeners('method')
+  }
+
+  public draw(): void {
+    this.drawClassName()
+    this.drawProperties()
+    this.drawMethods()
+  }
+
+  public addField(type: 'property' | 'method'): void {
+    this.drawFieldForm(type)
+  }
+
+  public submitForm(type: 'property' | 'method', form: HTMLFormElement): void {
+    const accessModifier = (document.getElementById('accessModifier') as HTMLSelectElement).value
+    const modifier = (document.getElementById('modifier') as HTMLSelectElement).value
+    const name = (document.getElementById('name') as HTMLInputElement).value
+    const fieldtype = (document.getElementById('type') as HTMLInputElement).value
+
+    const newField: ClassAttribute = {
+      name,
+      type: fieldtype,
+      accessModifier: [accessModifier, modifier]
+    }
+
+    if (type === 'property') {
+      this.curClassInfo.properties.push(newField)
+    } else if (type === 'method') {
+      this.curClassInfo.methods.push(newField)
+    }
+    form.innerText = ''
     this.draw()
     this.editor.draw()
   }

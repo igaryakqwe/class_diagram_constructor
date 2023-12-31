@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e57fde4-ff11-4693-800c-655d23789c9a" name="Changes" comment="replaced arrow methods to ArrowDrawer">
-      <change afterPath="$PROJECT_DIR$/src/renderer/src/SidePanel.ts" afterDir="false" />
+    <list default="true" id="5e57fde4-ff11-4693-800c-655d23789c9a" name="Changes" comment="added side panel">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/assets/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/assets/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/src/ArrowDrawer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/ArrowDrawer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/src/CanvasView.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/CanvasView.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/src/Editor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/Editor.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/src/renderer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/renderer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/src/SidePanel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/SidePanel.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703934771262</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added side panel">
+      <created>1704020643472</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1704020643472</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,6 +164,7 @@
     <MESSAGE value="added arrows and possibility to edit them" />
     <MESSAGE value="replaced classBlock methods to ClassDrawer" />
     <MESSAGE value="replaced arrow methods to ArrowDrawer" />
-    <option name="LAST_COMMIT_MESSAGE" value="replaced arrow methods to ArrowDrawer" />
+    <MESSAGE value="added side panel" />
+    <option name="LAST_COMMIT_MESSAGE" value="added side panel" />
   </component>
 </project>
