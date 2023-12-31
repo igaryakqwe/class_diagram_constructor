@@ -31,21 +31,21 @@ export class CanvasView {
   }
 
   private setupButton(): void {
-    const addRectangleBtn = document.getElementById('addRectangleBtn')
-    const addArrowBtn = document.getElementById('addArrowBtn')
-    if (addRectangleBtn) {
-      addRectangleBtn.addEventListener('click', () =>
-        this.editor.addClassBlock({
-          name: 'Test',
-          properties: [],
-          methods: []
-        })
-      )
-    }
+    const addRectangleBtn = document.getElementById('addRectangleBtn') as HTMLButtonElement
+    const addArrowBtn = document.getElementById('addArrowBtn') as HTMLButtonElement
+    const deleteAllBtn = document.getElementById('deleteAllBtn') as HTMLButtonElement
 
-    if (addArrowBtn) {
-      addArrowBtn.addEventListener('click', () => this.editor.addArrow())
-    }
+    addRectangleBtn.addEventListener('click', () =>
+      this.editor.addClassBlock({
+        name: 'Test',
+        properties: [],
+        methods: []
+      })
+    )
+
+    addArrowBtn.addEventListener('click', () => this.editor.addArrow())
+
+    deleteAllBtn.addEventListener('click', () => this.editor.deleteAll())
 
     document.addEventListener('keydown', (event) => this.editor.handleKeyDown(event))
   }

@@ -48,12 +48,19 @@ export class Editor {
         mouseY >= rectangle.y &&
         mouseY <= rectangle.y + rectangle.height
       ) {
+        if (this.selectedRectangleIndex === index) {
+          return
+        }
+
         const sidePanel = new SidePanel(this, index)
         sidePanel.drawAll()
         this.isDragging = true
         this.selectedRectangleIndex = index
         this.offsetX = mouseX - rectangle.x
         this.offsetY = mouseY - rectangle.y
+        this.draw()
+      } else {
+        this.selectedRectangleIndex = null
         this.draw()
       }
     })
@@ -237,5 +244,21 @@ export class Editor {
   public handleResizeMouseUp(): void {
     this.resizing = false
     this.resizingHandle = null
+  }
+
+  public handleKeyDown(event: KeyboardEvent): void {
+    if (event.keyCode === 46 || event.key === 'Delete') {
+      if (this.selectedRectangleIndex !== null) {
+        this.classBlocks.splice(this.selectedRectangleIndex, 1)
+        this.selectedRectangleIndex = null
+        this.draw()
+      }
+    }
+  }
+
+  public deleteAll(): void {
+    this.classBlocks = []
+    this.arrows = []
+    this.draw()
   }
 }

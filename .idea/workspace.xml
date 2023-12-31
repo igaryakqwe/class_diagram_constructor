@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e57fde4-ff11-4693-800c-655d23789c9a" name="Changes" comment="added possibility to delete and add class attributes">
+    <list default="true" id="5e57fde4-ff11-4693-800c-655d23789c9a" name="Changes" comment="added possibility to clear screen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/assets/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/assets/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/src/CanvasView.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/CanvasView.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/src/ClassDrawer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/ClassDrawer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/src/Editor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/Editor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/src/FileReader.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/FileReader.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/src/SidePanel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/src/SidePanel.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -159,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1704027065876</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fixed styles">
+      <created>1704037284226</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1704037284226</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +183,8 @@
     <MESSAGE value="replaced arrow methods to ArrowDrawer" />
     <MESSAGE value="added side panel" />
     <MESSAGE value="added possibility to delete and add class attributes" />
-    <option name="LAST_COMMIT_MESSAGE" value="added possibility to delete and add class attributes" />
+    <MESSAGE value="fixed styles" />
+    <MESSAGE value="added possibility to clear screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="added possibility to clear screen" />
   </component>
 </project>

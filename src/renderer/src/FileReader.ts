@@ -22,7 +22,8 @@ export class FileManager {
         const analysisResult = this.analyzer.analyzeFile(fileContent)
         this.editor.addClassBlock(analysisResult)
       } catch (error) {
-        resultContainer.innerHTML = `Error reading file: ${error?.message}`
+        const errorMessage = (error as { message?: string })?.message
+        resultContainer.innerHTML = `Error reading file: ${errorMessage}`
       }
     }
 

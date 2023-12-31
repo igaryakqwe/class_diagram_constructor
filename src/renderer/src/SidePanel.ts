@@ -25,19 +25,19 @@ export class SidePanel {
               ${accessModifiersHtml}
               <h4>Name: ${property.name}</h4>
               <h4>Type: ${property.type}</h4>
-              <button class="delete-button" data-type="property" data-index="${index}">Delete</button>
+              <button class="icon-button delete-button" data-type="property" data-index="${index}">❌</button>
             </div>`
   }
 
   private getMethodHtml(method: ClassAttribute, index: number): string {
     const accessModifiersHtml = this.getAccessModifiersHtml(method.accessModifier)
-    const parameters = method.parameters.join(', ')
+    const parameters = method.parameters?.join(', ') || ''
     return `<div>
-              ${accessModifiersHtml}
-              <h4>Name: ${method.name}(${parameters})</h4>
-              <h4>Type: ${method.type}</h4>
-              <button class="delete-button" data-type="method" data-index="${index}">Delete</button>
-            </div>`
+            ${accessModifiersHtml}
+            <h4>Name: ${method.name}(${parameters})</h4>
+            <h4>Type: ${method.type}</h4>
+            <button class="icon-button delete-button" data-type="method" data-index="${index}">❌</button>
+          </div>`
   }
 
   private addDeleteButtonListeners(type: 'property' | 'method'): void {
@@ -80,7 +80,7 @@ export class SidePanel {
       <input type="text" id="name">
       <label for="type">Type:</label>
       <input type="text" id="type">
-      <button id="submitForm">Add ${type}</button>
+      <button class="icon-button" id="submitForm">✅</button>
     `
 
     const submitFormBtn = document.getElementById('submitForm') as HTMLButtonElement
@@ -95,7 +95,8 @@ export class SidePanel {
 
     const saveButton = document.createElement('button')
     saveButton.id = 'save'
-    saveButton.innerText = 'Save'
+    saveButton.className = 'icon-button'
+    saveButton.innerText = '✅'
 
     saveButton.addEventListener('click', () => {
       this.curClassInfo.name = editNameInput.value
@@ -119,7 +120,7 @@ export class SidePanel {
 
   public drawProperties(): void {
     const properties = document.getElementById('propertiesList') as HTMLElement
-    const head = '<h3>Properties <button id="addProperty">+</button></h3>'
+    const head = '<h3>Properties <button class="icon-button" id="addProperty">➕</button></h3>'
     const propertyElements = this.curClassInfo.properties.map((property, index) => {
       return this.getPropertyHtml(property, index)
     })
@@ -132,7 +133,7 @@ export class SidePanel {
 
   public drawMethods(): void {
     const methods = document.getElementById('methodsList') as HTMLElement
-    const head = '<h3>Methods <button id="addMethod">+</button></h3>'
+    const head = '<h3>Methods <button class="icon-button" id="addMethod">➕</button></h3>'
     const methodElements = this.curClassInfo.methods.map((method, index) => {
       return this.getMethodHtml(method, index)
     })

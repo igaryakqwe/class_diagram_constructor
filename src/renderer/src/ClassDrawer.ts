@@ -23,6 +23,10 @@ export class ClassDrawer {
     const startX = centerX - combinedWidth / 2
 
     this.ctx.fillStyle = 'black'
+
+    img.onload = (): void => {
+      this.ctx.drawImage(img, startX, iconY, iconWidth, iconHeight)
+    }
     this.ctx.drawImage(img, startX, iconY, iconWidth, iconHeight)
 
     const textX = startX + iconWidth + 5
@@ -60,6 +64,19 @@ export class ClassDrawer {
       const textY = this.classBlock.y + 40 + this.totalHeight
       const iconX = this.classBlock.x + 5
       const textX = iconX + iconWidth * 2 + 12
+
+      permissionIcon.onload = (): void => {
+        this.ctx.drawImage(permissionIcon, iconX, textY - iconHeight + 3, 16, 16)
+      }
+      accessIcon.onload = (): void => {
+        this.ctx.drawImage(
+          accessIcon,
+          iconX + iconWidth + 8,
+          textY - iconHeight + 3,
+          iconWidth,
+          iconHeight
+        )
+      }
 
       this.ctx.drawImage(permissionIcon, iconX, textY - iconHeight + 3, 16, 16)
       this.ctx.drawImage(
@@ -105,6 +122,12 @@ export class ClassDrawer {
       const iconX = this.classBlock.x + 5
       const textX = iconX + 18 * 2
 
+      methodIcon.onload = (): void => {
+        this.ctx.drawImage(methodIcon, iconX, textY - 18 + 3, 19, 19)
+      }
+      accessIcon.onload = (): void => {
+        this.ctx.drawImage(accessIcon, iconX + 11 + 8, textY - 16 + 3, 11, 16)
+      }
       this.ctx.drawImage(methodIcon, iconX, textY - 18 + 3, 19, 19)
       this.ctx.drawImage(accessIcon, iconX + 11 + 8, textY - 16 + 3, 11, 16)
       this.ctx.fillText(methodValue, textX, textY)
