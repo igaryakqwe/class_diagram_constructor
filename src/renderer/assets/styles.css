@@ -58,6 +58,7 @@ a:hover {
   display: flex;
   flex-direction: row;
   padding: 15px 30px 0 30px;
+  overflow: hidden!important;
 }
 
 .versions {
@@ -211,4 +212,136 @@ a:hover {
 .attribute {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form > input, select {
+  width: 200px;
+}
+
+
+input {
+  box-sizing: border-box;
+  margin-top: 5px;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Hover State */
+input:hover {
+  border-color: #007bff;
+}
+
+/* Focus State */
+input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+input:disabled {
+  background-color: #f1f1f1;
+  cursor: not-allowed;
+}
+
+::placeholder {
+  color: #999;
+}
+
+input[type="text"]::-ms-clear {
+  display: none;
+}
+
+input[type="text"]::-ms-reveal {
+  display: none;
+}
+
+select {
+  box-sizing: border-box;
+  margin-top: 5px;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+select:hover {
+  border-color: #007bff;
+}
+
+select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button {
+  box-sizing: border-box;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button.primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+button.secondary {
+  background-color: #fff;
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button:disabled {
+  background-color: #f1f1f1;
+  color: #999;
+  cursor: not-allowed;
+}
+
+#analyzeForm {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+#analyzeForm > input {
+  width: 300px;
+}
+
+#analyzeForm > button {
+  width: 100px;
+  height: 40px;
+  margin-top: 2px;
+}
+
+.icon-button {
+  width: 28px;
+  background-color: transparent;
+  padding: 2px;
+  border: 1px solid black;
+}
+
+canvas {
+  margin-top: 10px;
 }

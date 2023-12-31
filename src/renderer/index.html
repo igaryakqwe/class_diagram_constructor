@@ -14,15 +14,18 @@
 <body>
 <div class="container">
   <div>
-    <h1>Hello World!</h1>
-    <input type="file" accept=".ts" id="file-input" />
-    <button id="analyze-button">Analyze</button>
+    <h1>Class Diagram Constructor</h1>
+    <div id="analyzeForm">
+      <input type="file" accept=".ts" id="file-input" />
+      <button id="analyze-button">Analyze</button>
+    </div>
+    <button id="addRectangleBtn">📄</button>
+    <button id="addArrowBtn">➚</button>
+    <button id="deleteAllBtn">❌</button>
     <pre id="result-container"></pre>
     <div class="canvas-wrapper">
       <canvas id="canvas" style="border: 1px solid #000"></canvas>
     </div>
-    <button id="addRectangleBtn">Add ClassInfo</button>
-    <button id="addArrowBtn">Add Arrow</button>
   </div>
   <div class="sidePanel">
     <h1>Class Info</h1>
